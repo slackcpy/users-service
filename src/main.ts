@@ -1,4 +1,5 @@
 import { NestFactory } from '@nestjs/core';
+import dotenv from 'dotenv';
 
 import { AppModule } from './app.module';
 
@@ -9,4 +10,6 @@ async function bootstrap() {
   );
   app.listen(3000);
 }
+
+dotenv.config();
 bootstrap();
