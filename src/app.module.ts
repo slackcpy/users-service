@@ -1,18 +1,21 @@
+import { join } from 'path';
+import { cwd, env } from 'process';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
-import { join } from 'path';
-import { cwd } from 'process';
+import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule } from '@nestjs/config';
 
-import {UsersModule} from './Users/users.module';
-import { AppController } from './users.controller';
+import { UsersModule } from './Users/users.module';
 
 @Module({
   imports: [
     UsersModule,
+    ConfigModule.forRoot(),
     GraphQLModule.forRoot({
-    autoSchemaFile: join(cwd(), 'src/schema.gql')
-  })],
-  controllers: [AppController]
+    autoSchemaFile: join(cwd(), 'src/schema.gql')  
+  }),
+  MongooseModule.forRoot(env.DB_LINK)
+]
   
 })
 export class AppModule {}
