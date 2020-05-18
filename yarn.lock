@@ -65,6 +65,16 @@
     core-js "^3.4.0"
     lodash.xorby "^4.7.0"
 
+"@apollo/federation@^0.16.0":
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/@apollo/federation/-/federation-0.16.0.tgz#ce20c52d2f0368eb086465a9098ba2fa8038bfe9"
+  integrity sha512-+UA9QQNA4q896OOmyFHhKTf7iOIFvjL+h/I7ozRkA+Ayv1368pXtd3zyeKrXtUKD21a1vtEkEjCUX9aDGR8cqg==
+  dependencies:
+    apollo-graphql "^0.4.0"
+    apollo-server-env "^2.4.4-alpha.0"
+    core-js "^3.4.0"
+    lodash.xorby "^4.7.0"
+
 "@apollo/gateway@^0.15.0":
   version "0.15.1"
   resolved "https://registry.yarnpkg.com/@apollo/gateway/-/gateway-0.15.1.tgz#6acb6180e21108d4c651bb8ce27c1703d4935505"
@@ -706,10 +716,10 @@
   resolved "https://registry.yarnpkg.com/@nestjs/mongoose/-/mongoose-7.0.1.tgz#832ec72621cc9103c03dc294818c1ae749a483e3"
   integrity sha512-DbYz1HpP3P9KvrnlIPKTUibFJTtk85RKCmyt6YHor9+vz7pILI6lA9Ha+X7F0upBK3R2KHMSmaLd4Khdo06iNg==
 
-"@nestjs/platform-express@^7.0.0":
-  version "7.0.11"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-7.0.11.tgz#aa9a9c3f8938a6767cd6a875df7ef8f688c35637"
-  integrity sha512-QWddDTFzZIKgylcjYP60kRPb5upPvejomV0JaNS3CFiKyJSonFaq1iTWOe8owhrNb0i3QWADDN44ImSvLhVMPg==
+"@nestjs/platform-express@^7.0.13":
+  version "7.0.13"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-7.0.13.tgz#b324203de25fb2de5719fc95c71d5f17396f562c"
+  integrity sha512-OT0YLIpgXkTkx+HWAZ5dFDSHsllrymlR9D8TaRntGX3TcvyQ2D05MK6yTuKiSUFLfSynoPYNc07lGAVuf9OBKA==
   dependencies:
     body-parser "1.19.0"
     cors "2.8.5"
