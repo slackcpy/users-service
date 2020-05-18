@@ -37,3 +37,18 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+
+- stage: Deploy
+  displayName: Deploy to app service
+  jobs:  
+  - job: Deploy
+    displayName: Deploy
+    steps:
+    - task: AzureRmWebAppDeployment@4
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'Free Trial(21739d37-7de3-412c-91d0-105c69be8462)'
+        appType: 'webAppContainer'
+        WebAppName: 'slackcpyapi'
+        DockerNamespace: 'users-service'
+        DockerRepository: 'slackcpyacr.azurecr.io/users-service'
