@@ -38,17 +38,14 @@ stages:
         tags: |
           $(tag)
 
-- stage: Deploy
-  displayName: Deploy to app service
+- stage: Restart 
+  displayName: Restart web app
   jobs:  
-  - job: Deploy
-    displayName: Deploy
+  - job: Restart
+    displayName: Restar
     steps:
-    - task: AzureRmWebAppDeployment@4
+    - task: AzureAppServiceManage@0
       inputs:
-        ConnectionType: 'AzureRM'
         azureSubscription: 'Free Trial(21739d37-7de3-412c-91d0-105c69be8462)'
-        appType: 'webAppContainer'
+        Action: 'Restart Azure App Service'
         WebAppName: 'slackcpyapi'
-        DockerNamespace: 'users-service'
-        DockerRepository: 'slackcpyacr.azurecr.io/users-service'
