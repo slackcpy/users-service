@@ -38,14 +38,15 @@ stages:
         tags: |
           $(tag)
 
-- stage: Restart 
-  displayName: Restart web app
+- stage: Deploy 
+  displayName: Deploy to web app
   jobs:  
-  - job: Restart
-    displayName: Restar
+  - job: Deploy
+    displayName: Deploy
     steps:
-    - task: AzureAppServiceManage@0
+    - task: AzureWebAppContainer@1
       inputs:
         azureSubscription: 'Free Trial(21739d37-7de3-412c-91d0-105c69be8462)'
-        Action: 'Restart Azure App Service'
-        WebAppName: 'slackcpyapi'
+        appName: 'slackcpyapi'
+        multicontainerConfigFile: 'docker-compose.prod.yml'
+ 
