@@ -3,6 +3,7 @@ import { IUser } from '../interfaces/user.interface';
 
 export const UserSchema = new mongoose.Schema<IUser>({
   email: String,
-  fistName: String,
+  password: String,
+  firstName: String,
   lastName: String
 })

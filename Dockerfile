@@ -14,5 +14,6 @@ COPY . .
 RUN yarn build
 
 EXPOSE 3001
+EXPOSE 4000
 
 CMD ["yarn", "run", "start:dev"]

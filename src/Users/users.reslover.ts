@@ -1,4 +1,4 @@
-import { Resolver, Query, Args, Mutation } from '@nestjs/graphql';
+import { Resolver, Query, Args, Mutation, ResolveReference } from '@nestjs/graphql';
 import { User } from './gqlTypes/user.gqlType';
 import { UsersService } from './users.service';
 import { CreateUserInput } from './dto/create-user.dto';
@@ -6,6 +6,7 @@ import { CreateUserInput } from './dto/create-user.dto';
 @Resolver(of => User)
 export class UsersResolver {
   constructor(private usersService: UsersService) {};
+
 
   @Query(() => User)
   async user(@Args('id', {type: () => String}) id: string) {
@@ -17,4 +18,8 @@ export class UsersResolver {
     return this.usersService.createUser(input); 
   }
   
+  @ResolveReference()
+  resolveReference(reference: { __typename: string; id: string }) {
+    return this.usersService.getUserById(reference.id);
+  }
 }

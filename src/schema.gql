@@ -15,7 +15,7 @@ directive @provides(fields: String!) on FIELD_DEFINITION
 type User {
   id: String!
   email: String!
-  fistName: String
+  firstName: String
   lastName: String
 }
 
@@ -29,6 +29,7 @@ type Mutation {
 
 input CreateUserInput {
   email: String!
+  password: String!
   firstName: String
   lastName: String
 }
